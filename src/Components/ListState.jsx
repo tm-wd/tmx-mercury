@@ -22,7 +22,7 @@ class ListState extends React.Component{
             this.dataList = [], 
             (el, idx) => <Cards key={idx} nome={el.nome} sigla={el.sigla} regiao={el.regiao.nome} link={() => this.linkReference(el.sigla)} />,
             () => {
-                return this.setState({
+                this.setState({
                     amount: this.dataList,
                 })
             }
@@ -35,7 +35,7 @@ class ListState extends React.Component{
             this.dataList = [], 
             (el, idx) => <City key={idx} nome={el.nome} mesorregiao={el.microrregiao.nome} />,
             () => {
-                return this.setState({
+                this.setState({
                     amount: this.dataList,
                 })
             }
@@ -48,7 +48,7 @@ class ListState extends React.Component{
             this.dataList = [], 
             (el, idx) => <Cards key={idx} nome={el.nome} sigla={el.sigla} regiao={el.regiao.nome} link={() => this.linkReference(el.sigla)} />,
             () => {
-                return this.setState({
+                this.setState({
                     amount: this.dataList,
                 })
             },

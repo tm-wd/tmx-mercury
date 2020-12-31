@@ -1,9 +1,10 @@
 import React from 'react';
-import RequestAPI from './RequestAPI';
+import RequestAPI from '../service/RequestAPI';
 import Cards from './Cards';
 import Loading from './Loading';
 import Search from './Search';
 import City from './City';
+import listing from '../model/listing';
 
 class ListState extends React.Component{
 
@@ -11,61 +12,57 @@ class ListState extends React.Component{
         super(props)
         this.searchAction = this.searchAction.bind(this);
         this.linkReference = this.linkReference.bind(this);
-        this.dataList = <Loading />;
-        this.state = { amount: [] }
+        this.dataList = [];
+        this.state = { amount: <Loading /> }
     }
 
     componentDidMount(){
-        this.dataList = []
-        fetch(RequestAPI)
-        .then(res => res.json())
-        .then(list => {
-            list.sort((a, b) =>  a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0  );
-            list.forEach((el, idx) => {
-                let dataMount = <Cards key={idx} nome={el.nome} sigla={el.sigla} regiao={el.regiao.nome} link={() => this.linkReference(el.sigla)} />
-                this.setState({
-                    amount: this.dataList.push(dataMount),
+        listing(
+            RequestAPI,
+            this.dataList = [], 
+            (el, idx) => <Cards key={idx} nome={el.nome} sigla={el.sigla} regiao={el.regiao.nome} link={() => this.linkReference(el.sigla)} />,
+            () => {
+                return this.setState({
+                    amount: this.dataList,
                 })
-            });
-        })
-    }
-
-    searchAction(e){
-        fetch(RequestAPI)
-        .then(res => res.json())
-        .then(list => {
-            let res = list.filter((el) => el.nome.indexOf(e.target.value) !== -1 );
-            this.dataList = [];
-            res.forEach((el, idx) => {
-                let dataMount = <Cards key={idx} nome={el.nome} sigla={el.sigla} regiao={el.regiao.nome} link={() => this.linkReference(el.sigla)} />
-                this.setState({
-                    amount: this.dataList.push(dataMount),
-                })
-            });
-        })
+            }
+        )    
     }
 
     linkReference(el){
-        this.dataList = []
-        fetch(`${RequestAPI}/${el}/municipios`)
-        .then(res => res.json())
-        .then(list => {
-            list.sort((a, b) =>  a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0  );
-            list.forEach((el, idx) => {
-                let dataMount = <City key={idx} nome={el.nome} mesorregiao={el.microrregiao.nome} />
-                this.setState({
-                    amount: this.dataList.push(dataMount),
+        listing(
+            `${RequestAPI}/${el}/municipios`,
+            this.dataList = [], 
+            (el, idx) => <City key={idx} nome={el.nome} mesorregiao={el.microrregiao.nome} />,
+            () => {
+                return this.setState({
+                    amount: this.dataList,
                 })
-            });
-        })
+            }
+        )
     }
+
+    searchAction(e){
+        listing(
+            RequestAPI,
+            this.dataList = [], 
+            (el, idx) => <Cards key={idx} nome={el.nome} sigla={el.sigla} regiao={el.regiao.nome} link={() => this.linkReference(el.sigla)} />,
+            () => {
+                return this.setState({
+                    amount: this.dataList,
+                })
+            },
+            e,
+        )    
+    }
+
 
     render(){
         return(
             <>
                 <Search search={this.searchAction} />
                 <div className="row">
-                    {this.dataList}                    
+                    {this.state.amount}                    
                 </div>
             </>
         )

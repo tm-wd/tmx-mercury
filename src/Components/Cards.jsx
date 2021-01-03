@@ -1,5 +1,4 @@
-function Cards(props){
-    const {nome, sigla, regiao, link} = props;
+function Cards({nome, sigla, regiao, link}){
     return(
         <div className="col-lg-4 mb-3">
             <div className="card ">

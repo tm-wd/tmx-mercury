@@ -1,5 +1,4 @@
-function City(props){
-    const { nome, mesorregiao } = props;
+function City({ nome, mesorregiao }){
     return(
         <div className="container">
             <div className="border border-primary alert alert-secondary" role="alert">

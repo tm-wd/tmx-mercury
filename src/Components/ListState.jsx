@@ -5,6 +5,7 @@ import Loading from './Loading';
 import Search from './Search';
 import City from './City';
 import listing from '../model/listing';
+import RenderResult from './Render';
 
 class ListState extends React.Component{
 
@@ -61,9 +62,7 @@ class ListState extends React.Component{
         return(
             <>
                 <Search search={this.searchAction} />
-                <div className="row">
-                    {this.state.amount}                    
-                </div>
+                <RenderResult> {this.state.amount} </RenderResult>
             </>
         )
     }

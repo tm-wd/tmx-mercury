@@ -1,8 +1,10 @@
-const listing = (APIRef, arrRef, cardRef, stateRef, filterRef) => {
-    fetch(APIRef)
-    .then(res => res.json())
-    .then(list => {
+import axios from 'axios';
 
+const listing = (APIRef, arrRef, cardRef, stateRef, filterRef) => {
+
+    axios.get(APIRef)
+    .then(resp => resp.data)
+    .then(list => {
         if(filterRef) list = list.filter((el) => el.nome.indexOf(filterRef.target.value) !== -1 ); 
 
         list.sort((a, b) =>  a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0  );
@@ -11,8 +13,9 @@ const listing = (APIRef, arrRef, cardRef, stateRef, filterRef) => {
             arrRef.push(dataMount);
         });
 
-        return stateRef();
+        return stateRef();    
     })
+    .catch(error => console.log(error))
 }
 
 export default listing;

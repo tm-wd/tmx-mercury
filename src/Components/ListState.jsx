@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import RequestAPI from '../service/RequestAPI';
-import Cards from './Cards';
-import Loading from './Loading';
-import Search from './Search';
+import { Loading, Warning } from './Feedback';
 import City from './City';
 import listing from '../model/listing';
-import RenderResult from './Render';
 
+const Cards = lazy( () => import('./Cards') )
+const Search = lazy( () => import('./Search') )
+const RenderResult = lazy( () => import('./Render') )
 class ListState extends React.Component{
 
     constructor(props){
@@ -59,11 +59,16 @@ class ListState extends React.Component{
 
 
     render(){
+        const mount = (this.state.amount.length <= 0 ? <Warning /> : this.state.amount)
         return(
-            <>
-                <Search search={this.searchAction} />
-                <RenderResult> {this.state.amount} </RenderResult>
-            </>
+            <Suspense fallback={ <Loading /> } >
+                <>
+                    <Search search={this.searchAction} />
+                    <RenderResult> 
+                        { mount } 
+                    </RenderResult>
+                </>
+            </Suspense>
         )
     }
 }

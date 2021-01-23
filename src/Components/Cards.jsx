@@ -6,7 +6,7 @@ function Cards({nome, sigla, regiao, link}){
                 <div className="card-body text-secondary">
 
                     <p className="card-text">Região <strong> {regiao} </strong> do Brasil.</p>
-                    <button className="btn btn-primary" onClick={link}>Saiba mais sobre {sigla}</button>
+                    <button className="btn btn-primary" onClick={link}>Cidades do {sigla}</button>
                 </div>
             </div>
         </div>

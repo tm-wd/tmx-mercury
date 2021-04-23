@@ -1,8 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import RequestAPI from '../service/RequestAPI';
 import { Loading, Warning } from './Feedback';
-import City from './City';
-import listing from '../model/listing';
+import axios from 'axios';
 
 const Cards = lazy( () => import('./Cards') )
 const Search = lazy( () => import('./Search') )
@@ -12,49 +11,48 @@ class ListState extends React.Component{
     constructor(props){
         super(props)
         this.searchAction = this.searchAction.bind(this);
-        this.linkReference = this.linkReference.bind(this);
         this.dataList = [];
         this.state = { amount: <Loading /> }
     }
 
     componentDidMount(){
-        listing(
-            RequestAPI,
-            this.dataList = [], 
-            (el, idx) => <Cards key={idx} nome={el.nome} sigla={el.sigla} regiao={el.regiao.nome} link={() => this.linkReference(el.sigla)} />,
-            () => {
-                this.setState({
-                    amount: this.dataList,
-                })
-            }
-        )    
-    }
-
-    linkReference(el){
-        listing(
-            `${RequestAPI}/${el}/municipios`,
-            this.dataList = [], 
-            (el, idx) => <City key={idx} nome={el.nome} mesorregiao={el.microrregiao.nome} />,
-            () => {
-                this.setState({
-                    amount: this.dataList,
-                })
-            }
-        )
+        axios.get(RequestAPI)
+            .then(res => {
+                res.data.sort((a, b) =>  a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0  );
+                res.data.forEach((el, idx) => {
+                    this.dataList.push(
+                        <Cards 
+                            key={idx} 
+                            nome={el.nome}
+                            sigla={el.sigla} 
+                            regiao={el.regiao.nome} 
+                        />
+                    )
+                });
+                this.setState({ amount: this.dataList })
+            }) 
     }
 
     searchAction(e){
-        listing(
-            RequestAPI,
-            this.dataList = [], 
-            (el, idx) => <Cards key={idx} nome={el.nome} sigla={el.sigla} regiao={el.regiao.nome} link={() => this.linkReference(el.sigla)} />,
-            () => {
-                this.setState({
-                    amount: this.dataList,
-                })
-            },
-            e,
-        )    
+        axios.get(RequestAPI)
+        .then(list => {
+            this.dataList = [];
+            list.data = list.data.filter((el) => el.nome.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1 );
+            list.data.sort((a, b) =>  a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0  );
+
+            list.data.forEach((el, idx) => {
+                let dataMount = <Cards 
+                        key={idx} 
+                        nome={el.nome}
+                        sigla={el.sigla} 
+                        regiao={el.regiao.nome} 
+                    />
+                this.dataList.push(dataMount);
+            });
+
+            this.setState({ amount: this.dataList })
+            
+        })
     }
 
 
@@ -63,10 +61,9 @@ class ListState extends React.Component{
         return(
             <Suspense fallback={ <Loading /> } >
                 <>
+                    <h1 className="py-3">Estados do Brasil</h1>
                     <Search search={this.searchAction} />
-                    <RenderResult> 
-                        { mount } 
-                    </RenderResult>
+                    <RenderResult>{ mount }</RenderResult>
                 </>
             </Suspense>
         )

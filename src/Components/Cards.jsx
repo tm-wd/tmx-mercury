@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import ScrollReveal from 'scrollreveal'
 
 function Cards({nome, sigla, regiao, link}){
@@ -12,9 +13,8 @@ function Cards({nome, sigla, regiao, link}){
             <div className="card ">
                 <div className="card-header"><strong>{nome}</strong> | <span className="text-primary">{sigla}</span></div>
                 <div className="card-body text-secondary">
-
                     <p className="card-text">Região <strong> {regiao} </strong> do Brasil.</p>
-                    <button className="btn btn-primary" onClick={link}>Cidades do {sigla}</button>
+                    <Link to={`/estado/${(sigla).toLowerCase()}`} className="btn btn-primary" onClick={link}>Cidades do {sigla}</Link>
                 </div>
             </div>
         </div>

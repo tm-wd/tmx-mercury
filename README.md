@@ -1,15 +1,19 @@
-# tmx-mercury
+# TMX Mercury project
 
-Este projeto ilustra um cenário de lista de municípios por estado. Funciona da seguinte forma:
-- Há uma lista de estados, onde você  pode pesquisar por um deles em específico.
-- Ao clicar no card, será exibida a lisa de municípios do estado escolhido.
+> This project show a list county for state in Brazil. It works like this:
 
-## Particularidades
+* There's a state list, where you can search for their specific state.
+* When click in the card, will be showed the list of counties the state choosed.
 
-O projeto foi construido sob a Lib React, utilizando o React Router para persistência dos dados
+## Particularities
 
-Caso queira rodar o projeto, execute:
-### `npm start`
+> The TMX Mercury project build under React lib, using React Router for data persist.
 
-Caso queira compilar os arquivos para produção, execute:
-### `npm run build`
+Run the project
+`npm start`
+
+Compiler the production
+`npm run build`
+
+Have a fun!
+

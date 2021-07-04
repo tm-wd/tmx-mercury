@@ -1,3 +1,6 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
 function City({ nome, mesorregiao }){
     return(
         <div className="municipios border border-primary alert alert-secondary" role="alert">
@@ -5,4 +8,10 @@ function City({ nome, mesorregiao }){
         </div>
     )
 }
+
+City.propTypes = {
+    nome: PropTypes.string.isRequired,
+    mesorregiao: PropTypes.string
+}
+
 export default City

@@ -3,6 +3,7 @@ import { Loading } from './Feedback';
 import City from './City';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import RequestAPI from '../service/RequestAPI';
 
@@ -41,6 +42,10 @@ class State extends React.Component{
             </>
         )
     }
+}
+
+State.propTypes = {
+    match: PropTypes.string
 }
 
 export default State;

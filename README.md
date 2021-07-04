@@ -1,12 +1,12 @@
 # TMX Mercury project :high_brightness:
 
-##The propose this project is show a list county for state in Brazil. It works like this: :fire:
+### The propose this project is show a list county for state in Brazil. It works like this: :fire:
 
 * There's a state list, where you can search for their specific state or clicking in a button card.
 * When click in the card, will be showed the list of counties the state choosed.
 
 ## Preview
-**TMX Mercury** (https://tjmelo.github.io/tmx-mercury/)
+:point_right: **TMX Mercury** (https://tjmelo.github.io/tmx-mercury/)
 
 ## Particularities :key:
 

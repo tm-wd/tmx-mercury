@@ -1,19 +1,22 @@
-# TMX Mercury project
+# TMX Mercury project :high_brightness:
 
-> This project show a list county for state in Brazil. It works like this:
+###The propose this project is show a list county for state in Brazil. It works like this: :fire:
 
-* There's a state list, where you can search for their specific state.
+* There's a state list, where you can search for their specific state or clicking in a button card.
 * When click in the card, will be showed the list of counties the state choosed.
 
-## Particularities
+## Preview
+[**TMX Mercury**] (https://tjmelo.github.io/tmx-mercury/)
+
+## Particularities :key:
 
 > The TMX Mercury project build under React lib, using React Router for data persist.
 
-Run the project
+:pushpin: Run the project
 `npm start`
 
-Compiler the production
+:pushpin: Compiler the production
 `npm run build`
 
-Have a fun!
+Have a fun! :tada:
 

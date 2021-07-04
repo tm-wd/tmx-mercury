@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-  <React.StrictMode basename={process.env.PUBLIC_URL}>
+  <React.StrictMode basename={window.location.pathname || ''}>
       <BrowserRouter>
         <Entry />
       </BrowserRouter>

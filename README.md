@@ -6,7 +6,7 @@
 * When click in the card, will be showed the list of counties the state choosed.
 
 ## Preview
-:point_right: [TMX Mercury](https://tjmelo.github.io/tmx-mercury/)
+[TMX Mercury](https://tjmelo.github.io/tmx-mercury/)
 
 ## Particularities :key:
 

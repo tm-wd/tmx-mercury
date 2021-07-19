@@ -1,2 +1,2 @@
-- [] Feature <br />
-- [] Fix bug
+- [ ] Feature <br />
+- [ ] Fix bug

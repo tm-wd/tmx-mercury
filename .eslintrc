@@ -18,6 +18,11 @@
     "plugins": [
         "react"
     ],
-    "rules": {
+    "ignorePatterns": ["node_modules/"],
+    "rules": {},
+    "settings": {
+        "react": {
+            "version": "detected"
+        }
     }
 }

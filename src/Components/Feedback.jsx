@@ -1,23 +1,29 @@
 import React from 'react';
 
 const Loading = () => {
-    return(
+    return (
         <div className="container">
-            <div className="col-xs-12 container alert alert-info" role="alert">
-            Baixando os dados..
+            <div
+                className="col-xs-12 container alert alert-info"
+                role="alert"
+            >
+                Baixando os dados..
             </div>
         </div>
-    )
-}
+    );
+};
 
 const Warning = () => {
-    return(
+    return (
         <div className="container">
-            <div className="col-xs-12 container alert alert-warning" role="alert">
-            Nenhum dado coincide com a sua busca...
+            <div
+                className="col-xs-12 container alert alert-warning"
+                role="alert"
+            >
+                Nenhum dado coincide com a sua busca...
             </div>
         </div>
-    )
-}
+    );
+};
 
-export{ Loading, Warning }
+export { Loading, Warning };

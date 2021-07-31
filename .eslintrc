@@ -15,9 +15,7 @@
         "ecmaVersion": 12,
         "sourceType": "module"
     },
-    "plugins": [
-        "react"
-    ],
+    "plugins": ["react"],
     "ignorePatterns": ["node_modules/"],
     "rules": {},
     "settings": {

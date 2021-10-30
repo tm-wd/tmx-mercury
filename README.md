@@ -9,9 +9,7 @@
 -   When click in the card, will be showed the list of counties the state choosed.
 
 ## Preview
-![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/react?color=yellow)
-![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/react-dom?color=yellow)
-![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/react-router-dom?color=yellow)
+
 ![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/bootstrap?color=yellow)
 ![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/node-sass?color=yellow)
 ![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/scrollreveal?color=yellow)
@@ -20,6 +18,8 @@
 :gem: **[TMX Mercury](https://tjmelo.github.io/tmx-mercury/)**
 
 ## Particularities :key:
+![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/react?color=yellow)
+![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/react-router-dom?color=yellow)
 
 > The TMX Mercury project build under React lib, using React Router for data persist.
 

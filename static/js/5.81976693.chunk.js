@@ -1,2 +1,0 @@
-(this["webpackJsonp@tjmelo/tmx-mercury"]=this["webpackJsonp@tjmelo/tmx-mercury"]||[]).push([[5],{64:function(e,t,o){"use strict";o.r(t);var r=o(1);o(0);t.default=function(e){var t=e.search;return Object(r.jsx)("input",{type:"text",onKeyUp:t,className:"form-control form-control-lg mb-4",placeholder:"Digite o nome de um estado aqui..."})}}}]);
-//# sourceMappingURL=5.81976693.chunk.js.map

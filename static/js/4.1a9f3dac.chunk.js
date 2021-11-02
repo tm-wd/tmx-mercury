@@ -1,2 +1,0 @@
-(this["webpackJsonp@tjmelo/tmx-mercury"]=this["webpackJsonp@tjmelo/tmx-mercury"]||[]).push([[4],{65:function(e,r,t){"use strict";t.r(r);var c=t(1);t(0);r.default=function(e){var r=e.children;return Object(c.jsx)("div",{className:"row",children:r})}}}]);
-//# sourceMappingURL=4.1a9f3dac.chunk.js.map

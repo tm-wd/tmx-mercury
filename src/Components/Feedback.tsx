@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Loading = () => {
+const Loading = (): JSX.Element => {
     return (
         <div className="container">
             <div
@@ -13,7 +13,7 @@ const Loading = () => {
     );
 };
 
-const Warning = () => {
+const Warning = (): JSX.Element => {
     return (
         <div className="container">
             <div

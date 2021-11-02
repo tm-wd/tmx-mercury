@@ -1,13 +1,23 @@
-import { useEffect } from 'react';
+import { MouseEventHandler, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ScrollReveal from 'scrollreveal';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Cards({ nome, sigla, regiao, link }) {
-    useEffect(() => {
-        ScrollReveal().reveal('.cards');
-    }, []);
+interface CardsProps {
+    nome: string;
+    sigla: string;
+    regiao: string;
+    link: MouseEventHandler<HTMLAnchorElement>;
+}
+
+const Cards: React.FC<CardsProps> = ({
+    nome,
+    sigla,
+    regiao,
+    link,
+}): JSX.Element => {
+    useEffect(() => ScrollReveal().reveal('.cards'), []);
 
     return (
         <div className="col-lg-4 mb-3 cards">
@@ -34,12 +44,12 @@ function Cards({ nome, sigla, regiao, link }) {
             </div>
         </div>
     );
-}
+};
 Cards.propTypes = {
     nome: PropTypes.string.isRequired,
     sigla: PropTypes.string.isRequired,
     regiao: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
+    link: PropTypes.any.isRequired,
 };
 
 export default Cards;

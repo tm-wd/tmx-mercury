@@ -1,14 +1,30 @@
-import React from 'react';
-import { Loading } from './Feedback';
-import City from './City';
+import React, { lazy } from 'react';
+
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import { Loading } from './Feedback';
+const City = lazy(() => import('./City'));
+
 import RequestAPI from '../service/RequestAPI';
 
-class State extends React.Component {
-    constructor(props) {
+interface MyProps {
+    datas: JSX.Element[];
+    estado: string | React.ReactNode;
+}
+
+interface MyState {
+    datas: JSX.Element | JSX.Element[];
+}
+
+class State extends React.Component<MyProps, MyState> {
+    estado: string;
+    dataList: JSX.Element[];
+    static propTypes: {
+        match: PropTypes.Requireable<string>;
+    };
+    constructor(props: any) {
         super(props);
         this.estado = this.props.match.params.estado;
         this.state = { datas: <Loading /> };
@@ -19,7 +35,7 @@ class State extends React.Component {
         axios
             .get(`${RequestAPI}/${this.estado}/municipios`)
             .then(res => {
-                res.data.forEach((el, idx) => {
+                res.data.forEach((el: any, idx: number) =>
                     this.dataList.push(
                         <City
                             key={idx}
@@ -28,8 +44,8 @@ class State extends React.Component {
                                 el.microrregiao.nome
                             }
                         />
-                    );
-                });
+                    )
+                );
                 this.setState({ datas: this.dataList });
             });
     }

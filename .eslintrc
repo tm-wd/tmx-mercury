@@ -1,8 +1,7 @@
 {
     "env": {
         "browser": true,
-        "es2021": true,
-        "node": true
+        "es2021": true
     },
     "extends": [
         "eslint:recommended",
@@ -17,10 +16,16 @@
     },
     "plugins": ["react"],
     "ignorePatterns": ["node_modules/"],
-    "rules": {},
+    "rules": {
+        "no-unused-vars": 0,
+        "no-undef": 0
+    },
     "settings": {
         "react": {
             "version": "detected"
         }
+    },
+    "globals": {
+        "JSX": true
     }
 }

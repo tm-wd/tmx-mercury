@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { KeyboardEventHandler } from 'react';
 import PropTypes from 'prop-types';
 
-function Search({ search }) {
+interface SearchProps {
+    search:
+        | KeyboardEventHandler<HTMLInputElement>
+        | undefined;
+}
+
+const Search: React.FC<SearchProps> = ({
+    search,
+}): JSX.Element => {
     return (
         <input
             type="text"
@@ -10,10 +18,10 @@ function Search({ search }) {
             placeholder="Digite o nome de um estado aqui..."
         />
     );
-}
+};
 
 Search.propTypes = {
-    search: PropTypes.onKeyUp,
+    search: PropTypes.any,
 };
 
 export default Search;

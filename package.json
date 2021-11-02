@@ -1,7 +1,7 @@
 {
-    "name": "tmx-mercury",
+    "name": "@tjmelo/tmx-mercury",
     "version": "1.0.0",
-    "homepage": "https://tjmelo.github.io/tmx-mercury",
+    "homepage": "https://github.com/tjmelo/tmx-mercury#readme",
     "dependencies": {
         "@testing-library/jest-dom": "^5.11.6",
         "@testing-library/react": "^11.2.2",
@@ -55,5 +55,14 @@
         "gh-pages": "^3.2.3",
         "husky": "^7.0.1",
         "prettier": "2.3.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tjmelo/tmx-mercury.git"
+    },
+    "author": "tjmelo <thiago.tmwd@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/tjmelo/tmx-mercury/issues"
     }
 }

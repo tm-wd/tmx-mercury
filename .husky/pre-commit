@@ -1,5 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run prelint & npm run lint
-npm run prefetch & npm run deploy
+npm run prelint && npm run lint
+npm run prefetch && npm run deploy

@@ -1,8 +1,8 @@
 {
     "name": "@tjmelo/tmx-mercury",
     "version": "1.0.0",
+    "homepage": "https://tjmelo.github.io/tmx-mercury",
     "private": false,
-    "homepage": "https://github.com/tjmelo/tmx-mercury#readme",
     "dependencies": {
         "@testing-library/jest-dom": "^5.11.6",
         "@testing-library/react": "^11.2.2",
@@ -65,8 +65,5 @@
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/tjmelo/tmx-mercury/issues"
-    },
-    "publishConfig": {
-        "access": "public"
     }
 }

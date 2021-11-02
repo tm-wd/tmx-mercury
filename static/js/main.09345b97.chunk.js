@@ -1,0 +1,2 @@
+(this["webpackJsonptmx-mercury"]=this["webpackJsonptmx-mercury"]||[]).push([[1],{17:function(e,t,n){"use strict";n.r(t);var c=n(7),r=n(0),s=n.n(r),a=n(15),i=n.n(a),l=n(13),b=Object(r.lazy)((function(){return Promise.all([n.e(4),n.e(5)]).then(n.bind(null,28))}));i.a.render(Object(c.jsx)(s.a.StrictMode,{children:Object(c.jsx)(l.a,{basename:"/tmx-mercury",children:Object(c.jsx)(r.Suspense,{fallback:Object(c.jsx)("p",{children:"Loading..."}),children:Object(c.jsx)(b,{})})})}),document.getElementById("root"))}},[[17,2,3]]]);
+//# sourceMappingURL=main.09345b97.chunk.js.map

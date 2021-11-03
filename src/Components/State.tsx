@@ -1,7 +1,10 @@
 import React, { lazy } from 'react';
 
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import {
+    Link,
+    RouteComponentProps,
+} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { Loading } from './Feedback';
@@ -18,15 +21,20 @@ interface MyState {
     datas: JSX.Element | JSX.Element[];
 }
 
-class State extends React.Component<MyProps, MyState> {
-    estado: string;
+class State extends React.Component<
+    MyProps & RouteComponentProps,
+    MyState
+> {
+    estado: string | any;
     dataList: JSX.Element[];
+    param: any;
     static propTypes: {
         match: PropTypes.Requireable<string>;
     };
     constructor(props: any) {
         super(props);
-        this.estado = this.props.match.params.estado;
+        this.param = this.props;
+        this.estado = this.param.match.params.estado;
         this.state = { datas: <Loading /> };
         this.dataList = [];
     }

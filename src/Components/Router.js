@@ -1,16 +1,19 @@
 import React, { lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-const ListState = lazy(() => import('./ListState'));
-const State = lazy(() => import('./State'));
-
 const Router = () => {
     return (
         <Switch>
-            <Route exact path="/" component={ListState} />
+            <Route
+                exact
+                path="/"
+                component={lazy(() =>
+                    import('./ListState')
+                )}
+            />
             <Route
                 path="/estado/:estado"
-                component={State}
+                component={lazy(() => import('./State'))}
             />
         </Switch>
     );

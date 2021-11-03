@@ -6,8 +6,20 @@ import axios from 'axios';
 const Cards = lazy(() => import('./Cards'));
 const Search = lazy(() => import('./Search'));
 const RenderResult = lazy(() => import('./Render'));
-class ListState extends React.Component {
-    constructor(props) {
+
+interface ListStateProps {
+    dataList: string[];
+}
+interface MyState {
+    amount: any | any[];
+}
+
+class ListState extends React.Component<
+    ListStateProps,
+    MyState
+> {
+    dataList: JSX.Element[];
+    constructor(props: any) {
         super(props);
         this.searchAction = this.searchAction.bind(this);
         this.dataList = [];
@@ -16,20 +28,21 @@ class ListState extends React.Component {
 
     componentDidMount() {
         axios.get(RequestAPI).then(res => {
-            res.data.sort((a, b) =>
+            res.data.sort((a: any, b: any) =>
                 a.nome < b.nome
                     ? -1
                     : a.nome > b.nome
                     ? 1
                     : 0
             );
-            res.data.forEach((el, idx) => {
+            res.data.forEach((el: any, idx: number) => {
                 this.dataList.push(
                     <Cards
                         key={idx}
                         nome={el.nome}
                         sigla={el.sigla}
                         regiao={el.regiao.nome}
+                        link={() => el}
                     />
                 );
             });
@@ -37,18 +50,18 @@ class ListState extends React.Component {
         });
     }
 
-    searchAction(e) {
+    searchAction(e: any) {
         axios.get(RequestAPI).then(list => {
             this.dataList = [];
             list.data = list.data.filter(
-                el =>
+                (el: any) =>
                     el.nome
                         .toLowerCase()
                         .indexOf(
                             e.target.value.toLowerCase()
                         ) !== -1
             );
-            list.data.sort((a, b) =>
+            list.data.sort((a: any, b: any) =>
                 a.nome < b.nome
                     ? -1
                     : a.nome > b.nome
@@ -56,13 +69,14 @@ class ListState extends React.Component {
                     : 0
             );
 
-            list.data.forEach((el, idx) => {
+            list.data.forEach((el: any, idx: number) => {
                 let dataMount = (
                     <Cards
                         key={idx}
                         nome={el.nome}
                         sigla={el.sigla}
                         regiao={el.regiao.nome}
+                        link={() => el}
                     />
                 );
                 this.dataList.push(dataMount);

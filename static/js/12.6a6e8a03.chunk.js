@@ -1,2 +1,0 @@
-(this["webpackJsonptmx-mercury"]=this["webpackJsonptmx-mercury"]||[]).push([[12],{69:function(e,t,r){"use strict";r.r(t);var o=r(7);r(0);t.default=function(e){var t=e.search;return Object(o.jsx)("input",{type:"text",onKeyUp:t,className:"form-control form-control-lg mb-4",placeholder:"Digite o nome de um estado aqui..."})}}}]);
-//# sourceMappingURL=12.6a6e8a03.chunk.js.map

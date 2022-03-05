@@ -1,6 +1,5 @@
 import React, { lazy } from 'react';
 
-import axios from 'axios';
 import {
     Link,
     RouteComponentProps,
@@ -10,7 +9,10 @@ import PropTypes from 'prop-types';
 import { Loading } from './Feedback';
 const City = lazy(() => import('./City'));
 
-import RequestAPI from '../service/RequestAPI';
+import {
+    RequestAPI,
+    RequestService,
+} from '../service/RequestAPI';
 
 interface MyProps {
     datas: JSX.Element[];
@@ -40,22 +42,18 @@ class State extends React.Component<
     }
 
     componentDidMount() {
-        axios
-            .get(`${RequestAPI}/${this.estado}/municipios`)
-            .then(res => {
-                res.data.forEach((el: any, idx: number) =>
-                    this.dataList.push(
-                        <City
-                            key={idx}
-                            nome={el.nome}
-                            mesorregiao={
-                                el.microrregiao.nome
-                            }
-                        />
-                    )
-                );
-                this.setState({ datas: this.dataList });
-            });
+        RequestService((res: any) => {
+            res.data.forEach((el: any, idx: number) =>
+                this.dataList.push(
+                    <City
+                        key={idx}
+                        nome={el.nome}
+                        mesorregiao={el.microrregiao.nome}
+                    />
+                )
+            );
+            this.setState({ datas: this.dataList });
+        }, `${RequestAPI}/${this.estado}/municipios`);
     }
 
     render() {

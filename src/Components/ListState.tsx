@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import RequestAPI from '../service/RequestAPI';
+import { RequestService } from '../service/RequestAPI';
 import { Loading, Warning } from './Feedback';
 import axios from 'axios';
 
@@ -27,7 +27,7 @@ class ListState extends React.Component<
     }
 
     componentDidMount() {
-        axios.get(RequestAPI).then(res => {
+        RequestService((res: any) => {
             res.data.sort((a: any, b: any) =>
                 a.nome < b.nome
                     ? -1
@@ -51,7 +51,7 @@ class ListState extends React.Component<
     }
 
     searchAction(e: any) {
-        axios.get(RequestAPI).then(list => {
+        RequestService((list: any) => {
             this.dataList = [];
             list.data = list.data.filter(
                 (el: any) =>

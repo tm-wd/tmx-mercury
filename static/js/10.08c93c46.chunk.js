@@ -1,0 +1,2 @@
+(this["webpackJsonptmx-mercury"]=this["webpackJsonptmx-mercury"]||[]).push([[10],{51:function(t,e,n){"use strict";n.r(e),n.d(e,"default",(function(){return a}));var c=n(0),r=n(1),u=n(6),a=function(){return Object(u.jsxs)(r.c,{children:[Object(u.jsx)(r.a,{exact:!0,path:"/",component:Object(c.lazy)((function(){return Promise.all([n.e(0),n.e(5)]).then(n.bind(null,52))}))}),Object(u.jsx)(r.a,{path:"/estado/:estado",component:Object(c.lazy)((function(){return Promise.all([n.e(0),n.e(6)]).then(n.bind(null,72))}))})]})}}}]);
+//# sourceMappingURL=10.08c93c46.chunk.js.map

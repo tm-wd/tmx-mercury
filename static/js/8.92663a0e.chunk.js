@@ -1,2 +1,0 @@
-(this["webpackJsonptmx-mercury"]=this["webpackJsonptmx-mercury"]||[]).push([[8],{71:function(e,r,s){"use strict";s.r(r);var t=s(6);s(0);r.default=function(e){var r=e.nome,s=e.mesorregiao;return Object(t.jsxs)("div",{className:"municipios border border-primary alert alert-secondary",role:"alert",children:[Object(t.jsx)("strong",{className:"text-primary",children:r})," ",Object(t.jsx)("sup",{className:"text-muted",children:s})]})}}}]);
-//# sourceMappingURL=8.92663a0e.chunk.js.map

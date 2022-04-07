@@ -1,9 +1,6 @@
 import React, { lazy } from 'react';
 
-import {
-    Link,
-    RouteComponentProps,
-} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { Loading } from './Feedback';
@@ -23,10 +20,7 @@ interface MyState {
     datas: JSX.Element | JSX.Element[];
 }
 
-class State extends React.Component<
-    MyProps & RouteComponentProps,
-    MyState
-> {
+class State extends React.Component<MyProps, MyState> {
     estado: string | any;
     dataList: JSX.Element[];
     param: any;

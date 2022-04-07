@@ -14,11 +14,12 @@
         "ecmaVersion": 12,
         "sourceType": "module"
     },
-    "plugins": ["react"],
+    "plugins": ["react", "@typescript-eslint"],
     "ignorePatterns": ["node_modules/"],
     "rules": {
         "no-unused-vars": 0,
-        "no-undef": 0
+        "no-undef": 0,
+        "@typescript-eslint/rule-name": 0
     },
     "settings": {
         "react": {
@@ -27,5 +28,6 @@
     },
     "globals": {
         "JSX": true
-    }
+    },
+    "parser": "@typescript-eslint/parser"
 }

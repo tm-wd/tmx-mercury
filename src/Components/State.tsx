@@ -11,12 +11,11 @@ import {
 } from '../service/RequestAPI';
 
 const State = () => {
+    const [dataState, setDataStates] = useState<null>(null);
+    const dataList: any = [];
 
-    const [dataState, setDataStates] = useState<null>(null)
-    const dataList: any = []
+    const { estado } = useParams();
 
-    const { estado } = useParams()
-    
     useEffect(() => {
         RequestService((res: any) => {
             res.data.forEach((el: any, idx: number) =>
@@ -30,7 +29,7 @@ const State = () => {
             );
             setDataStates(dataList);
         }, `${RequestAPI}/${estado}/municipios`);
-    }, [ estado ])
+    }, [estado]);
 
     return (
         <>
@@ -40,9 +39,9 @@ const State = () => {
             <Link to="/" className="btn btn-link mb-3">
                 &laquo;&nbsp;Voltar para os estados
             </Link>
-            { dataState || <Loading /> }
+            {dataState || <Loading />}
         </>
     );
-}
+};
 
 export default State;

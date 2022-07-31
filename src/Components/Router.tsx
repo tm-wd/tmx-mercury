@@ -12,9 +12,7 @@ const Router = () => {
             />
             <Route
                 path="/estado/:estado"
-                element={
-                    <State datas={[]} estado={undefined} />
-                }
+                element={<State />}
             />
         </Routes>
     );

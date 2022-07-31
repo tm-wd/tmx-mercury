@@ -1,7 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { RequestService } from '../service/RequestAPI';
 import { Loading, Warning } from './Feedback';
-import axios from 'axios';
 
 const Cards = lazy(() => import('./Cards'));
 const Search = lazy(() => import('./Search'));
@@ -85,7 +84,6 @@ class ListState extends React.Component<
             this.setState({ amount: this.dataList });
         });
     }
-
     render() {
         const mount =
             this.state.amount.length <= 0 ? (

@@ -1,7 +1,6 @@
-import React, { lazy } from 'react';
+import React, { lazy, useEffect, useState } from 'react';
 
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { Link, useParams } from 'react-router-dom';
 
 import { Loading } from './Feedback';
 const City = lazy(() => import('./City'));
@@ -11,34 +10,17 @@ import {
     RequestService,
 } from '../service/RequestAPI';
 
-interface MyProps {
-    datas: JSX.Element[];
-    estado: string | React.ReactNode;
-}
+const State = () => {
 
-interface MyState {
-    datas: JSX.Element | JSX.Element[];
-}
+    const [dataState, setDataStates] = useState<null>(null)
+    const dataList: any = []
 
-class State extends React.Component<MyProps, MyState> {
-    estado: string | any;
-    dataList: JSX.Element[];
-    param: any;
-    static propTypes: {
-        match: PropTypes.Requireable<string>;
-    };
-    constructor(props: any) {
-        super(props);
-        this.param = this.props;
-        this.estado = this.param.match.params.estado;
-        this.state = { datas: <Loading /> };
-        this.dataList = [];
-    }
-
-    componentDidMount() {
+    const { estado } = useParams()
+    
+    useEffect(() => {
         RequestService((res: any) => {
             res.data.forEach((el: any, idx: number) =>
-                this.dataList.push(
+                dataList.push(
                     <City
                         key={idx}
                         nome={el.nome}
@@ -46,28 +28,21 @@ class State extends React.Component<MyProps, MyState> {
                     />
                 )
             );
-            this.setState({ datas: this.dataList });
-        }, `${RequestAPI}/${this.estado}/municipios`);
-    }
+            setDataStates(dataList);
+        }, `${RequestAPI}/${estado}/municipios`);
+    }, [ estado ])
 
-    render() {
-        return (
-            <>
-                <h1 className="mt-3">
-                    Muncípios do {this.estado.toUpperCase()}
-                </h1>
-                <Link to="/" className="btn btn-link mb-3">
-                    &laquo;&nbsp;Voltar para os estados
-                </Link>
-
-                <section>{this.state.datas}</section>
-            </>
-        );
-    }
+    return (
+        <>
+            <h1 className="mt-3">
+                Muncípios do {estado?.toUpperCase()}
+            </h1>
+            <Link to="/" className="btn btn-link mb-3">
+                &laquo;&nbsp;Voltar para os estados
+            </Link>
+            { dataState || <Loading /> }
+        </>
+    );
 }
-
-State.propTypes = {
-    match: PropTypes.string,
-};
 
 export default State;

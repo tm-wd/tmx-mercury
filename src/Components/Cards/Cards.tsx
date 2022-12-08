@@ -20,7 +20,10 @@ const Cards: React.FC<CardsProps> = ({
     useEffect(() => ScrollReveal().reveal('.cards'), []);
 
     return (
-        <div className="col-lg-4 mb-3 cards">
+        <div
+            className="col-lg-4 mb-3 cards"
+            data-testid="cards"
+        >
             <div className="card ">
                 <div className="card-header">
                     <strong>{nome}</strong> |{' '}
@@ -52,4 +55,4 @@ Cards.propTypes = {
     link: PropTypes.any.isRequired,
 };
 
-export default Cards;
+export { Cards };

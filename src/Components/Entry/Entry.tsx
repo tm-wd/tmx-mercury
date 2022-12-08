@@ -1,5 +1,5 @@
 import React, { lazy } from 'react';
-const Router = lazy(() => import('./Router'));
+const Router = lazy(() => import('../Router'));
 
 class Entry extends React.Component {
     render() {
@@ -11,4 +11,4 @@ class Entry extends React.Component {
     }
 }
 
-export default Entry;
+export { Entry };

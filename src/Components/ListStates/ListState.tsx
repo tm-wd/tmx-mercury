@@ -1,10 +1,10 @@
 import React, { Suspense, lazy } from 'react';
-import { RequestService } from '../service/RequestAPI';
-import { Loading, Warning } from './Feedback';
+import { RequestService } from '../../service/RequestAPI';
+import { Loading, Warning } from '../Feedback';
 
-const Cards = lazy(() => import('./Cards'));
-const Search = lazy(() => import('./Search'));
-const RenderResult = lazy(() => import('./Render'));
+const Cards = lazy(() => import('../Cards'));
+const Search = lazy(() => import('../Search'));
+const RenderResult = lazy(() => import('../Render'));
 
 interface ListStateProps {
     dataList: string[];
@@ -91,10 +91,14 @@ class ListState extends React.Component<
             ) : (
                 this.state.amount
             );
+
         return (
             <Suspense fallback={<Loading />}>
                 <>
-                    <h1 className="py-3">
+                    <h1
+                        className="py-3"
+                        data-testid="title-list-state"
+                    >
                         Estados do Brasil
                     </h1>
                     <Search search={this.searchAction} />
@@ -105,4 +109,4 @@ class ListState extends React.Component<
     }
 }
 
-export default ListState;
+export { ListState };

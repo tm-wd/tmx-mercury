@@ -13,7 +13,7 @@ const City: React.FC<CityProps> = ({
     return (
         <div
             className="municipios border border-primary alert alert-secondary"
-            role="alert"
+            data-testid="city"
         >
             <strong className="text-primary">{nome}</strong>{' '}
             <sup className="text-muted">{mesorregiao}</sup>
@@ -26,4 +26,4 @@ City.propTypes = {
     mesorregiao: PropTypes.string,
 };
 
-export default City;
+export { City };

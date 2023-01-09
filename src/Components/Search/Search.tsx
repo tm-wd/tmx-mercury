@@ -24,4 +24,4 @@ Search.propTypes = {
     search: PropTypes.any,
 };
 
-export default Search;
+export { Search };

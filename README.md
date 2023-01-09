@@ -29,16 +29,19 @@ Online project: [https://tjmelo.github.io/tmx-mercury/](https://tjmelo.github.io
 > The project is building under React lib, using React Router for data persisting.
 
 :pushpin: Clone and install the projects' dependencies
+
 ```console
 tmx@mercury:~$ npm i
 ```
 
 :pushpin: Run the project at local environment
+
 ```console
 tmx@mercury:~$ npm start
 ```
 
 :pushpin: Compiler for production
+
 ```console
 tmx@mercury:~$ npm run build
 ```

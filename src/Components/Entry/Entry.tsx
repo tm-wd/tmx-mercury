@@ -4,9 +4,9 @@ const Router = lazy(() => import('../Router'));
 class Entry extends React.Component {
     render() {
         return (
-            <div className="container">
+            <section className="container">
                 <Router />
-            </div>
+            </section>
         );
     }
 }

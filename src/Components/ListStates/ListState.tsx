@@ -35,15 +35,9 @@ const ListState = () => {
             );
             setData(data);
             data.sort(
-                (
-                    a: { nome: number },
-                    b: { nome: number }
-                ) =>
-                    a.nome < b.nome
-                        ? -1
-                        : a.nome > b.nome
-                        ? 1
-                        : 0
+                (  a: { nome: number }, b: { nome: number } ) =>
+                    a.nome < b.nome  ? -1 : a.nome > b.nome 
+                        ? 1 : 0
             );
             setRenderData(
                 data.map((info: any) => getCards(info))

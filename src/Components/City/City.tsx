@@ -9,7 +9,6 @@ const City: React.FC<CityProps> = ({
     nome,
     mesorregiao,
 }): JSX.Element => {
-
     return (
         <div
             className="municipios border border-primary alert alert-secondary"

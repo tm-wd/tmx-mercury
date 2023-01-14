@@ -6,7 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 
 const Entry = lazy(() => import('./Components/Entry'));
 
-const container: HTMLElement | any = document.getElementById('root');
+const container: HTMLElement | any =
+    document.getElementById('root');
 
 ReactDOM.createRoot(container).render(
     <React.StrictMode>

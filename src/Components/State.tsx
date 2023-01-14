@@ -13,15 +13,31 @@ const State = () => {
 
     useEffect(() => {
         (async () => {
-            const { data } = await instanceAPI.get(`estados/${estado}/municipios`)
-            setDataStates(data.map((info: any) => <City key={info.id} nome={info.nome} mesorregiao={info.microrregiao.nome} />))
-        })()
+            const { data } = await instanceAPI.get(
+                `estados/${estado}/municipios`
+            );
+            setDataStates(
+                data.map((info: any) => (
+                    <City
+                        key={info.id}
+                        nome={info.nome}
+                        mesorregiao={info.microrregiao.nome}
+                    />
+                ))
+            );
+        })();
     }, [estado]);
 
     return (
         <>
-            <h1 className="mt-3"> Muncípios do {estado?.toUpperCase()} </h1>
-            <Link to="/" className="btn btn-link mb-3"> &laquo;&nbsp;Voltar para os estados </Link>
+            <h1 className="mt-3">
+                {' '}
+                Muncípios do {estado?.toUpperCase()}{' '}
+            </h1>
+            <Link to="/" className="btn btn-link mb-3">
+                {' '}
+                &laquo;&nbsp;Voltar para os estados{' '}
+            </Link>
             {dataState || <Loading />}
         </>
     );

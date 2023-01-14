@@ -7,7 +7,10 @@ const Router = () => {
     return (
         <Routes>
             <Route path="/" element={<ListState />} />
-            <Route path="/estado/:estado" element={<State />} />
+            <Route
+                path="/estado/:estado"
+                element={<State />}
+            />
         </Routes>
     );
 };

@@ -11,6 +11,6 @@ jest.useFakeTimers();
 
 test('Should render component <StateList />', async () => {
     await act(async () => {
-        render(<ListState dataList={[]} />);
+        render(<ListState />);
     });
 });

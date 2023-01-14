@@ -6,10 +6,7 @@ import State from './State';
 const Router = () => {
     return (
         <Routes>
-            <Route
-                path="/"
-                element={<ListState dataList={[]} />}
-            />
+            <Route path="/" element={<ListState />} />
             <Route
                 path="/estado/:estado"
                 element={<State />}

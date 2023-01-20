@@ -1,7 +1,7 @@
 # TMX Mercury project :high_brightness:
 
-![Passing](https://img.shields.io/github/workflow/status/tjmelo/tmx-mercury/Tasks%20TMX%20Mercury%20runner?color=yellow)
-![Version](https://img.shields.io/github/v/release/tjmelo/tmx-mercury?color=yellow)
+![Passing](https://img.shields.io/github/actions/workflow/status/tjmelo/tmx-mercury/github-actions-demo.yml)
+![Version](https://img.shields.io/github/v/release/tjmelo/tmx-mercury)
 
 ### The project proposal is to show a listed county for states in Brazil. It works like this:
 
@@ -17,7 +17,7 @@ Online project: [https://tjmelo.github.io/tmx-mercury/](https://tjmelo.github.io
 ![Screen](https://github.com/tjmelo/tmx-mercury/blob/main/public/TMXMercury2screen.png)
 
 ![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/bootstrap?color=yellow)
-![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/node-sass?color=yellow)
+![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/sass?color=yellow)
 ![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/scrollreveal?color=yellow)
 ![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/axios?color=yellow)
 
@@ -46,6 +46,6 @@ tmx@mercury:~$ npm start
 tmx@mercury:~$ npm run build
 ```
 
-![Size](https://img.shields.io/github/languages/code-size/tjmelo/tmx-mercury?color=yellow)
+![Size](https://img.shields.io/github/languages/code-size/tjmelo/tmx-mercury)
 
 Have a fun! :tada:

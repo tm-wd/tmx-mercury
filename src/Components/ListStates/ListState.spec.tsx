@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-    act,
-    render,
-    screen,
-} from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 
 import { ListState } from './ListState';
 

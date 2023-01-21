@@ -1,5 +1,6 @@
 import React, { Suspense, lazy, useEffect, useState } from 'react';
 import { instanceAPI } from '../../service/RequestAPI';
+import { TCard } from '../../types';
 import { Loading, Warning } from '../Feedback/Feedback';
 
 const Cards = lazy(() => import('../Cards'));
@@ -10,7 +11,7 @@ const ListState = () => {
     const [data, setData] = useState<[]>([]);
     const [renderData, setRenderData] = useState<[] | any>([]);
 
-    const getCards = (e: any) => (
+    const getCards = (e: TCard) => (
         <Cards key={e.id} nome={e.nome} sigla={e.sigla} regiao={e.regiao.nome} link={() => e} />
     );
 
@@ -19,7 +20,7 @@ const ListState = () => {
             const { data } = await instanceAPI.get('estados');
             setData(data);
             data.sort((a: { nome: number }, b: { nome: number }) => (a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0));
-            setRenderData(data.map((info: any) => getCards(info)));
+            setRenderData(data.map((info: TCard) => getCards(info)));
         })();
     }, []);
 
@@ -30,7 +31,7 @@ const ListState = () => {
             return search.test(input);
         });
 
-        setRenderData(searchCards.map(info => getCards(info)));
+        setRenderData(searchCards.map((info:TCard) => getCards(info)));
     };
 
     return (

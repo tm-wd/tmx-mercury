@@ -2,16 +2,9 @@ import { MouseEventHandler, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ScrollReveal from 'scrollreveal';
 import React from 'react';
-import PropTypes from 'prop-types';
+import { ICards } from '../../types';
 
-interface CardsProps {
-    nome: string;
-    sigla: string;
-    regiao: string;
-    link: MouseEventHandler<HTMLAnchorElement>;
-}
-
-const Cards: React.FC<CardsProps> = ({ nome, sigla, regiao, link }): JSX.Element => {
+const Cards: React.FC<ICards> = ({ nome, sigla, regiao, link }): JSX.Element => {
     useEffect(() => ScrollReveal().reveal('.cards'), []);
 
     return (
@@ -31,12 +24,6 @@ const Cards: React.FC<CardsProps> = ({ nome, sigla, regiao, link }): JSX.Element
             </div>
         </div>
     );
-};
-Cards.propTypes = {
-    nome: PropTypes.string.isRequired,
-    sigla: PropTypes.string.isRequired,
-    regiao: PropTypes.string.isRequired,
-    link: PropTypes.any.isRequired,
 };
 
 export { Cards };

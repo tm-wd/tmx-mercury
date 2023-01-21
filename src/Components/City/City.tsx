@@ -1,21 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { ICity } from '../../types';
 
-interface CityProps {
-    nome: string;
-    mesorregiao: string | undefined;
-}
-
-const City: React.FC<CityProps> = ({
-    nome,
-    mesorregiao,
-}): JSX.Element => {
+const City: React.FC<ICity> = ({ nome, mesorregiao }): JSX.Element => {
     return (
-        <div
-            className="municipios border border-primary alert alert-secondary"
-            data-testid="city"
-        >
-            <strong className="text-primary">{nome}</strong>{' '}
-            <sup className="text-muted">{mesorregiao}</sup>
+        <div className="municipios border border-primary alert alert-secondary" data-testid="city">
+            <strong className="text-primary">{nome}</strong> <sup className="text-muted">{mesorregiao}</sup>
         </div>
     );
 };

@@ -1,12 +1,10 @@
 declare type TCard = {
-    id: number,
-    nome: string,
-    sigla: string,
+    id: number;
+    nome: string;
+    sigla: string;
     regiao: {
-        nome: string
-    }
-}
+        nome: string;
+    };
+};
 
-export type {
-    TCard
-}
+export type { TCard };

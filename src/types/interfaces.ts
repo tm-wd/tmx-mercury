@@ -1,4 +1,4 @@
-import { MouseEventHandler } from "react";
+import { MouseEventHandler } from 'react';
 
 declare interface ICards {
     nome: string;
@@ -12,8 +12,4 @@ declare interface ICity {
     mesorregiao: string | undefined;
 }
 
-export type {
-    ICards,
-    ICity
-}
-
+export type { ICards, ICity };

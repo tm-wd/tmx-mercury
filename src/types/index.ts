@@ -1,8 +1,4 @@
-import { ICards, ICity } from "./interfaces";
-import { TCard } from "./types";
+import { ICards, ICity } from './interfaces';
+import { TCard } from './types';
 
-export type {
-    ICards,
-    ICity,
-    TCard
-}
+export type { ICards, ICity, TCard };

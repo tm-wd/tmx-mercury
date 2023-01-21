@@ -31,7 +31,7 @@ const ListState = () => {
             return search.test(input);
         });
 
-        setRenderData(searchCards.map((info:TCard) => getCards(info)));
+        setRenderData(searchCards.map((info: TCard) => getCards(info)));
     };
 
     return (

@@ -1,14 +1,14 @@
 import React, { lazy } from 'react';
-const Router = lazy(() => import('./Router'));
+const Router = lazy(() => import('../Router'));
 
 class Entry extends React.Component {
     render() {
         return (
-            <div className="container">
+            <section className="container">
                 <Router />
-            </div>
+            </section>
         );
     }
 }
 
-export default Entry;
+export { Entry };

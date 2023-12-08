@@ -1,18 +1,8 @@
 import axios from 'axios';
 
-const RequestAPI =
-    'https://servicodados.ibge.gov.br/api/v1/localidades/estados';
+const instanceAPI = axios.create({
+    baseURL: 'https://servicodados.ibge.gov.br/api/v1/localidades/',
+    headers: { 'X-Custom-Header': 'tmx-mercury' },
+});
 
-const RequestService = (
-    fn: any,
-    api: string = RequestAPI
-) => {
-    axios
-        .get(api)
-        .then(fn)
-        .catch(e => {
-            throw new Error(e);
-        });
-};
-
-export { RequestAPI, RequestService };
+export { instanceAPI };
